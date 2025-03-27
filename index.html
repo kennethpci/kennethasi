@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quezon City Novaliches</title>
+    
+	<link rel="stylesheet" href="css/index.css">
+	
+</head>
+<body onload="restoreScrollPosition()">
+
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/PEkoBAeyBVI?autoplay=1&mute=1&loop=1&playlist=PEkoBAeyBVI&controls=0&showinfo=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; fullscreen"></iframe>
+    </div>
+
+    <div class="navbar">
+        <img src="logo.png" alt="Logo" onclick="goHome()">
+        <a href="index.html" onclick="goHome()">Home</a>
+        <a href="places.html">Places to Visit</a>
+        <a href="history.html">History</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="content">
+        <h1>QUEZON CITY NOVALICHES</h1>
+        <p>Discover the hidden gems and rich history of my beloved hometown!</p>
+    </div>
+
+  <script>
+    function goHome() {
+        // Save the current scroll position before navigating
+        sessionStorage.setItem("scrollPosition", window.scrollY);
+        window.location.href = "index.html";
+    }
+
+    function restoreScrollPosition() {
+        // Retrieve the saved scroll position
+        const scrollPosition = sessionStorage.getItem("scrollPosition");
+        if (scrollPosition !== null) {
+            window.scrollTo(0, parseInt(scrollPosition));
+        }
+    }
+</script>
+
+
+</body>
+</html>
